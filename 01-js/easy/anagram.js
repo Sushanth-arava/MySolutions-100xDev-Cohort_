@@ -5,7 +5,9 @@
 */
 
 function isAnagram(str1, str2) {
-
+  const filterStr = (str) => str.replace(/\s/g, "").toLowerCase();
+  const sortStr = (str) => filterStr(str).split("").sort().join("");
+  return sortStr(str1) === sortStr(str2);
 }
 
 module.exports = isAnagram;
